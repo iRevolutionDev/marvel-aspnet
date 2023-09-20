@@ -1,0 +1,23 @@
+﻿<div
+  class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out @(Active ? "block translate-x-0" : "hidden translate-x-full sm:translate-x-0")"
+  style="backface-visibility: hidden">
+  <img
+    src="@ImageUrl"
+    class="block w-full"
+    alt="@Title"/>
+  <div
+    class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+      <h5 class="text-xl">@Title</h5>
+      <p>
+        @Subtitle
+      </p>
+  </div>
+</div>
+
+@code {
+  [Parameter] public string Id { get; set; } = Guid.NewGuid().ToString();
+  [Parameter] public string Title { get; set; } = string.Empty;
+  [Parameter] public string Subtitle { get; set; } = string.Empty;
+  [Parameter] public string ImageUrl { get; set; } = string.Empty;
+  [Parameter] public bool Active { get; set; }
+}

@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using Marvel.Data;
+using Marvel.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Marvel.Models;
 
@@ -7,15 +9,18 @@ namespace Marvel.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly CharacterRepository _characterRepository;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, CharacterRepository characterRepository)
     {
         _logger = logger;
+        _characterRepository = characterRepository;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
+        var characters = await _characterRepository.GetCharacters();
+        return View(characters);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

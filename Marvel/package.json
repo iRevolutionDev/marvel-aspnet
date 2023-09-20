@@ -5,6 +5,7 @@
   "author": "Revolution",
   "license": "MIT",
   "scripts": {
+    "css:dev": "tailwindcss -i ./wwwroot/css/site.css -o ./wwwroot/css/tailwind.css --watch",
     "css:build": "tailwindcss -i ./wwwroot/css/site.css -o ./wwwroot/css/tailwind.css"
   },
   "devDependencies": {

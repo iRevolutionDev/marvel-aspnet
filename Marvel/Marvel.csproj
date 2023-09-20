@@ -60,14 +60,27 @@
       <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\LICENSE" />
     </ItemGroup>
 
-
-
     <ItemGroup>
-      <Folder Include="Components\" />
+      <Folder Include="Contents\" />
+      <Folder Include="Services\" />
     </ItemGroup>
 
-    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-        <Exec Command="yarn css:build"/>
+    <ItemGroup>
+      <None Include="wwwroot\images\marvel.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+    
+    
+    <Target Name="PreBuild" BeforeTargets="Compile">
+        <Exec Command="yarn install" />
+    </Target>
+
+    <Target Name="PostBuild" BeforeTargets="Compile">
+        <Exec Command="yarn css:dev" Condition="'$(Configuration)' == 'Debug'" />
+        <Exec Command="yarn css:build" Condition="'$(Configuration)' == 'Release'" />
     </Target>
     
 </Project>

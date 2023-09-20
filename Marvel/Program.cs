@@ -1,8 +1,15 @@
+using Marvel.Data;
+using Marvel.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddServerSideBlazor();
+
+builder.Services.AddScoped<MarvelContext, MarvelContext>();
+builder.Services.AddTransient<CharacterRepository>();
+
 
 var app = builder.Build();
 
