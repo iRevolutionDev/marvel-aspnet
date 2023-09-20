@@ -26,6 +26,19 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
+    "httpWatch": {
+      "commandName": "Executable",
+      "executablePath": "dotnet",
+      "workingDirectory": "$(ProjectDir)",
+      "hotReloadEnabled": true,
+      "hotReloadProfile": "aspnetcore",
+      "commandLineArgs": "watch run",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5014"
+    },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
