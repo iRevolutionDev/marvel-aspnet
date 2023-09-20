@@ -60,6 +60,12 @@
       <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\LICENSE" />
     </ItemGroup>
 
+
+
+    <ItemGroup>
+      <Folder Include="Components\" />
+    </ItemGroup>
+
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
         <Exec Command="yarn css:build"/>
     </Target>
