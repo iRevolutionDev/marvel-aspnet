@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - Marvel.Web</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/tailwind.css" asp-append-version="true"/>
+</head>
+<body>
+<nav>
+  <div class="w-full bg-gray-800 text-gray-200">
+    <div class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+      <div class="flex flex-row items-center justify-between p-4">
+        <img class="h-8" src="~/images/marvel.png" alt="Marvel.Web Logo" />
+      </div>
+      <nav class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+          <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:bg-gray-700 hover:text-white" href="/">Home</a>
+      </nav>
+    </div>
+  </div>
+</nav>
+
+<main role="main" class="w-full">
+  @RenderBody()
+</main>
+
+<footer class="w-full text-center border-t border-grey p-4 pin-b">
+  <p class="text-gray-500">© Marvel.Web @DateTime.Now.Year</p>
+</footer>
+
+<script src="_framework/blazor.server.js"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

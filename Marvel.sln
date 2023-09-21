@@ -1,6 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel", "Marvel\Marvel.csproj", "{6C3333F9-61FF-476A-BF54-EA69869AEE3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel.Web", "Marvel.Web\Marvel.Web.csproj", "{6C3333F9-61FF-476A-BF54-EA69869AEE3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel.Application", "Marvel.Application\Marvel.Application.csproj", "{0FB48EE7-AF74-484C-91DE-CE0F3B1102CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel.Domain", "Marvel.Domain\Marvel.Domain.csproj", "{0DA8A0C6-1950-4F0E-9D53-C6A52DA61D2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel.Infra.Data", "Marvel.Infra.Data\Marvel.Infra.Data.csproj", "{320F5119-34B8-42E0-8F3F-B07B82274F63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel.Infra.Services", "Marvel.Infra.Services\Marvel.Infra.Services.csproj", "{3E92BFC2-EB61-4177-A1F8-D4F6B9DC1BD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel.Infra.IoC", "Marvel.Infra.IoC\Marvel.Infra.IoC.csproj", "{A68D7671-D7EF-4A62-BF39-E8465DF580F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +22,25 @@ Global
 		{6C3333F9-61FF-476A-BF54-EA69869AEE3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C3333F9-61FF-476A-BF54-EA69869AEE3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C3333F9-61FF-476A-BF54-EA69869AEE3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FB48EE7-AF74-484C-91DE-CE0F3B1102CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FB48EE7-AF74-484C-91DE-CE0F3B1102CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FB48EE7-AF74-484C-91DE-CE0F3B1102CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FB48EE7-AF74-484C-91DE-CE0F3B1102CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DA8A0C6-1950-4F0E-9D53-C6A52DA61D2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DA8A0C6-1950-4F0E-9D53-C6A52DA61D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DA8A0C6-1950-4F0E-9D53-C6A52DA61D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA8A0C6-1950-4F0E-9D53-C6A52DA61D2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{320F5119-34B8-42E0-8F3F-B07B82274F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{320F5119-34B8-42E0-8F3F-B07B82274F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{320F5119-34B8-42E0-8F3F-B07B82274F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{320F5119-34B8-42E0-8F3F-B07B82274F63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E92BFC2-EB61-4177-A1F8-D4F6B9DC1BD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E92BFC2-EB61-4177-A1F8-D4F6B9DC1BD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E92BFC2-EB61-4177-A1F8-D4F6B9DC1BD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E92BFC2-EB61-4177-A1F8-D4F6B9DC1BD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A68D7671-D7EF-4A62-BF39-E8465DF580F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A68D7671-D7EF-4A62-BF39-E8465DF580F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A68D7671-D7EF-4A62-BF39-E8465DF580F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A68D7671-D7EF-4A62-BF39-E8465DF580F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
