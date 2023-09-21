@@ -1,2 +1,3 @@
 ﻿/node_modules
 appsettings.Development.json
+wwwroot/css/tailwind.css
