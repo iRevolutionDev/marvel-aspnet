@@ -60,12 +60,12 @@ public class MarvelContext
         return characters?.Data.Results ?? throw new Exception("Characters not found");
     }
 
-    public async Task<Character> GetCharacterAsync(int id)
+    public async Task<Character?> GetCharacterAsync(int id)
     {
         var response = await Client.GetAsync($"characters/{id}?{GetDefaultQuery()}");
-        if (!response.IsSuccessStatusCode) throw new Exception("Character not found");
+        if (!response.IsSuccessStatusCode) return null;
         var json = await response.Content.ReadAsStringAsync();
         var characters = JsonConvert.DeserializeObject<MarvelResponse<Character>>(json);
-        return characters?.Data.Results.FirstOrDefault() ?? throw new Exception("Character not found");
+        return characters?.Data.Results.FirstOrDefault() ?? null;
     }
 }
