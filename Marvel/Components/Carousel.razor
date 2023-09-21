@@ -1,15 +1,13 @@
 ﻿@using Components
 @using Microsoft.VisualBasic
 @using System.Collections.ObjectModel
+@using Marvel.Constants
 
 <div
-  class="relative"
-  data-te-carousel-init
-  data-te-ride="carousel">
+  class="relative">
   <!--Carousel indicators-->
   <div
-    class="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
-    data-te-carousel-indicators>
+    class="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0">
     @foreach (var item in Items)
     {
       <CarouselButton
@@ -29,6 +27,7 @@
         Subtitle="@item.Subtitle"
         ImageUrl="@item.ImageUrl"
         Active="@(ActiveSlide == Items.IndexOf(item))"
+        Direction="@(ActiveSlide == Items.IndexOf(item) ? Direction.None : ActiveSlide > Items.IndexOf(item) ? Direction.Right : Direction.Left)"
         />
     }
   </div>
@@ -83,6 +82,8 @@
 
 @code {
   private int ActiveSlide { get; set; }
+  private int NextSlide { get; set; }
+  private int PrevSlide { get; set; }
 
   private Collection<CarouselItem> Items { get; set; } = new()
   {
@@ -103,8 +104,9 @@
   private void SlideTo(int slide)
   {
     if (slide < 0 || slide >= Items.Count) return;
-    
+
     ActiveSlide = slide;
+    CalculateSlides();
   }
 
   private void SlideNext()
@@ -116,6 +118,7 @@
     }
     
     ActiveSlide++;
+    CalculateSlides();
   }
   
   private void SlidePrev()
@@ -127,5 +130,12 @@
     }
     
     ActiveSlide--;
+    CalculateSlides();
+  }
+  
+  private void CalculateSlides()
+  {
+    NextSlide = ActiveSlide == Items.Count - 1 ? 0 : ActiveSlide + 1;
+    PrevSlide = ActiveSlide == 0 ? Items.Count - 1 : ActiveSlide - 1;
   }
 }
