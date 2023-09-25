@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel.Infra.Services", "Ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel.Infra.IoC", "Marvel.Infra.IoC\Marvel.Infra.IoC.csproj", "{A68D7671-D7EF-4A62-BF39-E8465DF580F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel.Application.Abstractions", "Marvel.Application.Abstractions\Marvel.Application.Abstractions.csproj", "{F751929C-47B5-49C2-B9AE-BC252B3D8DB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{A68D7671-D7EF-4A62-BF39-E8465DF580F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A68D7671-D7EF-4A62-BF39-E8465DF580F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A68D7671-D7EF-4A62-BF39-E8465DF580F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F751929C-47B5-49C2-B9AE-BC252B3D8DB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F751929C-47B5-49C2-B9AE-BC252B3D8DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F751929C-47B5-49C2-B9AE-BC252B3D8DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F751929C-47B5-49C2-B9AE-BC252B3D8DB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

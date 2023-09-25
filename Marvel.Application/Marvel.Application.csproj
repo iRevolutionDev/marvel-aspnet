@@ -7,16 +7,32 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Commands\" />
-      <Folder Include="Common\" />
-      <Folder Include="Queries\" />
-      <Folder Include="Services\" />
-    </ItemGroup>
-
-    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="12.0.1" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
       <PackageReference Include="MediatR" Version="12.1.1" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.11" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="7.0.11" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Marvel.Application.Abstractions\Marvel.Application.Abstractions.csproj" />
+      <ProjectReference Include="..\Marvel.Domain\Marvel.Domain.csproj" />
+      <ProjectReference Include="..\Marvel.Infra.Data\Marvel.Infra.Data.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.AspNetCore.Authorization">
+        <HintPath>..\..\..\..\..\Program Files\dotnet\shared\Microsoft.AspNetCore.App\7.0.10\Microsoft.AspNetCore.Authorization.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <Folder Include="Queries\Character\GetCharacter\" />
     </ItemGroup>
 
 </Project>

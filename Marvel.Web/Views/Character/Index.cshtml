@@ -1,4 +1,4 @@
-﻿@model Character?
+﻿@model Marvel.Application.Queries.Character.GetCharacters.CharacterDto?
 
 @{
     ViewData["Title"] = $"Character - {Model?.Name}";
@@ -25,5 +25,5 @@
         </p>
     </div>
     
-    <img class="rounded-lg object-cover h-full" src="@Model?.Thumbnail.Path.@Model?.Thumbnail.Extension" alt="@Model?.Name" />
+    <img class="rounded-lg object-cover h-full" src="@Model?.Thumbnail.Url" alt="@Model?.Name" />
 </div>

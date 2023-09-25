@@ -1,5 +1,5 @@
 ﻿@using Marvel.Web.Components
-@model List<Character?>
+@model IReadOnlyCollection<Marvel.Application.Queries.Character.GetCharacters.CharacterDto>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -11,14 +11,14 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         @foreach(var character in Model)
         {
-            <a href="@Url.Action("Index", "Character", new { id = character?.Id })">
+            <a href="@Url.Action("Index", "Character", new { id = character.Id })">
                 <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 h-full">
                     <div class="w-full h-full flex flex-col gap-4 p-4">
-                        <img class="rounded-t-lg object-cover h-[50%]" src="@character?.Thumbnail.Path.@character?.Thumbnail.Extension" alt="@character?.Name" />
+                        <img class="rounded-t-lg object-cover h-[50%]" src="@character.Thumbnail?.Path.@character.Thumbnail?.Extension" alt="@character.Name" />
                         <div class="flex flex-col gap-2">
-                            <h3 class="text-xl font-bold text-gray-800">@character?.Name</h3>
+                            <h3 class="text-xl font-bold text-gray-800">@character.Name</h3>
                             <p class="text-gray-600">
-                                @if (!string.IsNullOrEmpty(character?.Description))
+                                @if (!string.IsNullOrEmpty(character.Description))
                                 {
                                     @character.Description
                                 }

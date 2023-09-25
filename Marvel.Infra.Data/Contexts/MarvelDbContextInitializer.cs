@@ -1,7 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace Marvel.Infra.Data.Contexts;
+
+public static class MarvelDbContextInitializerExtensions
+{
+    public static async Task InitializeAsync(this WebApplication app)
+    {
+        using var scope = app.Services.CreateScope();
+        var initializer = scope.ServiceProvider.GetRequiredService<MarvelDbContextInitializer>();
+        
+        await initializer.InitializeAsync();
+    }
+}
 
 public class MarvelDbContextInitializer
 {
@@ -29,10 +42,5 @@ public class MarvelDbContextInitializer
             _logger.LogError(e, "An error occurred while migrating or initializing the database");
             throw;
         }
-    }
-
-    public Task SeedAsync()
-    {
-        return Task.CompletedTask;
     }
 }

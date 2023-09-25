@@ -71,9 +71,23 @@
 
     <ItemGroup>
       <PackageReference Include="MediatR" Version="12.1.1" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.11">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.11" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="7.0.11" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Marvel.Application\Marvel.Application.csproj" />
+      <ProjectReference Include="..\Marvel.Infra.Data\Marvel.Infra.Data.csproj" />
+      <ProjectReference Include="..\Marvel.Infra.IoC\Marvel.Infra.IoC.csproj" />
+      <ProjectReference Include="..\Marvel.Infra.Services\Marvel.Infra.Services.csproj" />
     </ItemGroup>
     
     

@@ -1,26 +1,26 @@
 ﻿using System.Diagnostics;
-using Marvel.Web.Data;
-using Marvel.Web.Interfaces;
+using Marvel.Application.Queries.Character.GetCharacters;
 using Microsoft.AspNetCore.Mvc;
 using Marvel.Web.Models;
+using MediatR;
 
 namespace Marvel.Web.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly CharacterRepository _characterRepository;
-
-    public HomeController(ILogger<HomeController> logger, CharacterRepository characterRepository)
+    private readonly IMediator _mediator;
+    
+    public HomeController(ILogger<HomeController> logger, IMediator mediator)
     {
         _logger = logger;
-        _characterRepository = characterRepository;
+        _mediator = mediator;
     }
 
     public async Task<IActionResult> Index()
     {
-        var characters = await _characterRepository.GetCharacters();
-        return View(characters);
+        var characters = await _mediator.Send(new GetCharactersQuery());
+        return View(characters.Characters);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
